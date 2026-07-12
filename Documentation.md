@@ -9,10 +9,14 @@
 ## Манипуляции с БД
 
 Создать БД:
+\```sql
 create database userdb;
+\```
 
 Удалить БД:
+\```sql
 drop database userdb;
+\```
 
 ---
 
@@ -31,120 +35,192 @@ drop database userdb;
 - [Другие](#другие)
 
 ### Целые числа авто
-smallserial - имеет размер в 2 байта, диапазон 1 - 32 767
-Пример: id smallserial primary key
+**smallserial** - имеет размер в 2 байта, диапазон 1 - 32 767
+\```sql
+id smallserial primary key
+\```
 
-serial - имеет размер в 4 байта, диапазон 1 - 2.1 млрд
-Пример: id serial primary key
+**serial** - имеет размер в 4 байта, диапазон 1 - 2.1 млрд
+\```sql
+id serial primary key
+\```
 
-bigserial - имеет размер в 8 байт, диапазон 1 - 9,2x10^18
-Пример: id bigserial primary key
+**bigserial** - имеет размер в 8 байт, диапазон 1 - 9,2x10^18
+\```sql
+id bigserial primary key
+\```
 
 ### Целые числа обычные
-smallint (Int2) - размер 2 байта, диапазон от -32 768 до 32 767
-Пример: age smallint
+**smallint (Int2)** - размер 2 байта, диапазон от -32 768 до 32 767
+\```sql
+age smallint
+\```
 
-integer (Int, int4) - размер 4 байта, диапазон от -2.1 млрд до 2.1 млрд
-Пример: price integer
+**integer (Int, int4)** - размер 4 байта, диапазон от -2.1 млрд до 2.1 млрд
+\```sql
+price integer
+\```
 
-bigint (Int8) - размер 8 байт, диапазон от -9,2x10^18 до 9,2x10^18
-Пример: population bigint
+**bigint (Int8)** - размер 8 байт, диапазон от -9,2x10^18 до 9,2x10^18
+\```sql
+population bigint
+\```
 
 ### Дробные числа
-numeric/decimal - точное число с задаваемой точностью, размер зависит от точности (макс. 131072 цифр до запятой, 16383 после)
-Пример: salary numeric(10,2)
+**numeric/decimal** - точное число с задаваемой точностью, размер зависит от точности (макс. 131072 цифр до запятой, 16383 после)
+\```sql
+salary numeric(10,2)
+\```
 
-real - размер 4 байта, диапазон от 1E-37 до 1E+37
-Пример: temperature real
+**real** - размер 4 байта, диапазон от 1E-37 до 1E+37
+\```sql
+temperature real
+\```
 
-double precision - размер 8 байт, диапазон от 1E-307 до 1E+308
-Пример: distance double precision
+**double precision** - размер 8 байт, диапазон от 1E-307 до 1E+308
+\```sql
+distance double precision
+\```
 
 ### Символьные
-char(n) - фиксированная длина, ровно n символов
-Пример: code char(3)
+**char(n)** - фиксированная длина, ровно n символов
+\```sql
+code char(3)
+\```
 
-varchar(n) - переменная длина, максимум n символов
-Пример: name varchar(50)
+**varchar(n)** - переменная длина, максимум n символов
+\```sql
+name varchar(50)
+\```
 
-text - неограниченная длина
-Пример: description text
+**text** - неограниченная длина
+\```sql
+description text
+\```
 
 ### Логические
-boolean - значения: True/False, t/f, yes/no, on/off, 1/0
-Пример: is_active boolean
+**boolean** - значения: True/False, t/f, yes/no, on/off, 1/0
+\```sql
+is_active boolean
+\```
 
 ### Дата и время
-date - размер 4 байта, хранит только дату
-Пример: birthday date -- 1999-01-08
+**date** - размер 4 байта, хранит только дату
+\```sql
+birthday date -- 1999-01-08
+\```
 
-time - размер 8 байт, хранит только время
-Пример: start_time time -- 13:21:24
+**time** - размер 8 байт, хранит только время
+\```sql
+start_time time -- 13:21:24
+\```
 
-time with time zone - размер 12 байт, время с часовым поясом
-Пример: start_time_with_tz time with time zone
+**time with time zone** - размер 12 байт, время с часовым поясом
+\```sql
+start_time_with_tz time with time zone
+\```
 
-timestamp - размер 8 байт, хранит дату и время
-Пример: created_at timestamp
+**timestamp** - размер 8 байт, хранит дату и время
+\```sql
+created_at timestamp
+\```
 
-timestamp with time zone - размер 8 байт, дата/время с часовым поясом
-Пример: created_at timestamptz
+**timestamp with time zone** - размер 8 байт, дата/время с часовым поясом
+\```sql
+created_at timestamptz
+\```
 
-interval - размер 16 байт, хранит временной интервал
-Пример: duration interval
+**interval** - размер 16 байт, хранит временной интервал
+\```sql
+duration interval
+\```
 
 ### Денежные
-money - размер 8 байт, диапазон от -92 трлн до 92 трлн
-Пример: price money
+**money** - размер 8 байт, диапазон от -92 трлн до 92 трлн
+\```sql
+price money
+\```
 
 ### Геометрические
-point - точка с координатами (x,y)
-Пример: location point -- (10,20)
+**point** - точка с координатами (x,y)
+\```sql
+location point -- (10,20)
+\```
 
-line - линия
-Пример: l line -- {1,2,3}
+**line** - линия
+\```sql
+l line -- {1,2,3}
+\```
 
-lseg - отрезок
-Пример: s lseg -- ((1,2),(2,2))
+**lseg** - отрезок
+\```sql
+s lseg -- ((1,2),(2,2))
+\```
 
-box - прямоугольник
-Пример: rect box -- ((0,0),(10,10))
+**box** - прямоугольник
+\```sql
+rect box -- ((0,0),(10,10))
+\```
 
-path - набор точек
-Пример: p path -- ((1,1),(2,2),(3,3))
+**path** - набор точек
+\```sql
+p path -- ((1,1),(2,2),(3,3))
+\```
 
-polygon - многоугольник
-Пример: poly polygon -- ((0,0),(10,0),(10,10))
+**polygon** - многоугольник
+\```sql
+poly polygon -- ((0,0),(10,0),(10,10))
+\```
 
-circle - окружность с центром (x,y) и радиусом r
-Пример: c circle -- <(5,5),10>
+**circle** - окружность с центром (x,y) и радиусом r
+\```sql
+c circle -- <(5,5),10>
+\```
 
 ### Интернет адреса
-inet - IPv4/IPv6 адрес
-Пример: ip inet -- '192.168.1.1'
+**inet** - IPv4/IPv6 адрес
+\```sql
+ip inet -- '192.168.1.1'
+\```
 
-cidr - IPv4/IPv6 с маской
-Пример: net cidr -- '192.168.1.0/24'
+**cidr** - IPv4/IPv6 с маской
+\```sql
+net cidr -- '192.168.1.0/24'
+\```
 
-macaddr - MAC-адрес (6 байт)
-Пример: mac macaddr -- '08:00:2b:01:02:03'
+**macaddr** - MAC-адрес (6 байт)
+\```sql
+mac macaddr -- '08:00:2b:01:02:03'
+\```
 
-macaddr8 - MAC-адрес EUI-64 (8 байт)
-Пример: mac macaddr8 -- '08:00:2b:01:02:03:04:05'
+**macaddr8** - MAC-адрес EUI-64 (8 байт)
+\```sql
+mac macaddr8 -- '08:00:2b:01:02:03:04:05'
+\```
 
 ### JSON
-json - хранит JSON в текстовом виде
-Пример: data json -- '{"age":"1"}'
+**json** - хранит JSON в текстовом виде
+\```sql
+data json -- '{"age":"1"}'
+\```
 
-jsonb - хранит JSON в бинарном виде (более быстрый для обработки)
-Пример: data jsonb -- '{"age":"1"}'
+**jsonb** - хранит JSON в бинарном виде (более быстрый для обработки)
+\```sql
+data jsonb -- '{"age":"1"}'
+\```
 
 ### Другие
-uuid - 32-байтовый UUID
-Пример: id uuid -- '123e4567-e89b-12d3-a456-426614174000'
+**uuid** - 32-байтовый UUID
+\```sql
+id uuid -- '123e4567-e89b-12d3-a456-426614174000'
+\```
 
-xml - XML-данные
-Пример: document xml -- '<root><item>text</item></root>'
+**xml** - XML-данные
+\```sql
+document xml -- '<root><item>text</item></root>'
+\```
 
-bytea - бинарные данные
-Пример: image bytea -- '\xDEADBEEF'
+**bytea** - бинарные данные
+\```sql
+image bytea -- '\xDEADBEEF'
+\```
