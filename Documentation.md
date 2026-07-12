@@ -9,14 +9,14 @@
 ## Манипуляции с БД
 
 Создать БД:
-\```sql
+```sql
 create database userdb;
-\```
+```
 
 Удалить БД:
-\```sql
+```sql
 drop database userdb;
-\```
+```
 
 ---
 
@@ -36,191 +36,191 @@ drop database userdb;
 
 ### Целые числа авто
 **smallserial** - имеет размер в 2 байта, диапазон 1 - 32 767
-\```sql
+```sql
 id smallserial primary key
-\```
+```
 
 **serial** - имеет размер в 4 байта, диапазон 1 - 2.1 млрд
-\```sql
+```sql
 id serial primary key
-\```
+```
 
 **bigserial** - имеет размер в 8 байт, диапазон 1 - 9,2x10^18
-\```sql
+```sql
 id bigserial primary key
-\```
+```
 
 ### Целые числа обычные
 **smallint (Int2)** - размер 2 байта, диапазон от -32 768 до 32 767
-\```sql
+```sql
 age smallint
-\```
+```
 
 **integer (Int, int4)** - размер 4 байта, диапазон от -2.1 млрд до 2.1 млрд
-\```sql
+```sql
 price integer
-\```
+```
 
 **bigint (Int8)** - размер 8 байт, диапазон от -9,2x10^18 до 9,2x10^18
-\```sql
+```sql
 population bigint
-\```
+```
 
 ### Дробные числа
 **numeric/decimal** - точное число с задаваемой точностью, размер зависит от точности (макс. 131072 цифр до запятой, 16383 после)
-\```sql
+```sql
 salary numeric(10,2)
-\```
+```
 
 **real** - размер 4 байта, диапазон от 1E-37 до 1E+37
-\```sql
+```sql
 temperature real
-\```
+```
 
 **double precision** - размер 8 байт, диапазон от 1E-307 до 1E+308
-\```sql
+```sql
 distance double precision
-\```
+```
 
 ### Символьные
 **char(n)** - фиксированная длина, ровно n символов
-\```sql
+```sql
 code char(3)
-\```
+```
 
 **varchar(n)** - переменная длина, максимум n символов
-\```sql
+```sql
 name varchar(50)
-\```
+```
 
 **text** - неограниченная длина
-\```sql
+```sql
 description text
-\```
+```
 
 ### Логические
 **boolean** - значения: True/False, t/f, yes/no, on/off, 1/0
-\```sql
+```sql
 is_active boolean
-\```
+```
 
 ### Дата и время
 **date** - размер 4 байта, хранит только дату
-\```sql
+```sql
 birthday date -- 1999-01-08
-\```
+```
 
 **time** - размер 8 байт, хранит только время
-\```sql
+```sql
 start_time time -- 13:21:24
-\```
+```
 
 **time with time zone** - размер 12 байт, время с часовым поясом
-\```sql
+```sql
 start_time_with_tz time with time zone
-\```
+```
 
 **timestamp** - размер 8 байт, хранит дату и время
-\```sql
+```sql
 created_at timestamp
-\```
+```
 
 **timestamp with time zone** - размер 8 байт, дата/время с часовым поясом
-\```sql
+```sql
 created_at timestamptz
-\```
+```
 
 **interval** - размер 16 байт, хранит временной интервал
-\```sql
+```sql
 duration interval
-\```
+```
 
 ### Денежные
 **money** - размер 8 байт, диапазон от -92 трлн до 92 трлн
-\```sql
+```sql
 price money
-\```
+```
 
 ### Геометрические
 **point** - точка с координатами (x,y)
-\```sql
+```sql
 location point -- (10,20)
-\```
+```
 
 **line** - линия
-\```sql
+```sql
 l line -- {1,2,3}
-\```
+```
 
 **lseg** - отрезок
-\```sql
+```sql
 s lseg -- ((1,2),(2,2))
-\```
+```
 
 **box** - прямоугольник
-\```sql
+```sql
 rect box -- ((0,0),(10,10))
-\```
+```
 
 **path** - набор точек
-\```sql
+```sql
 p path -- ((1,1),(2,2),(3,3))
-\```
+```
 
 **polygon** - многоугольник
-\```sql
+```sql
 poly polygon -- ((0,0),(10,0),(10,10))
-\```
+```
 
 **circle** - окружность с центром (x,y) и радиусом r
-\```sql
+```sql
 c circle -- <(5,5),10>
-\```
+```
 
 ### Интернет адреса
 **inet** - IPv4/IPv6 адрес
-\```sql
+```sql
 ip inet -- '192.168.1.1'
-\```
+```
 
 **cidr** - IPv4/IPv6 с маской
-\```sql
+```sql
 net cidr -- '192.168.1.0/24'
-\```
+```
 
 **macaddr** - MAC-адрес (6 байт)
-\```sql
+```sql
 mac macaddr -- '08:00:2b:01:02:03'
-\```
+```
 
 **macaddr8** - MAC-адрес EUI-64 (8 байт)
-\```sql
+```sql
 mac macaddr8 -- '08:00:2b:01:02:03:04:05'
-\```
+```
 
 ### JSON
 **json** - хранит JSON в текстовом виде
-\```sql
+```sql
 data json -- '{"age":"1"}'
-\```
+```
 
 **jsonb** - хранит JSON в бинарном виде (более быстрый для обработки)
-\```sql
+```sql
 data jsonb -- '{"age":"1"}'
-\```
+```
 
 ### Другие
 **uuid** - 32-байтовый UUID
-\```sql
+```sql
 id uuid -- '123e4567-e89b-12d3-a456-426614174000'
-\```
+```
 
 **xml** - XML-данные
-\```sql
+```sql
 document xml -- '<root><item>text</item></root>'
-\```
+```
 
 **bytea** - бинарные данные
-\```sql
+```sql
 image bytea -- '\xDEADBEEF'
-\```
+```
