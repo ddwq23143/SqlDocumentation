@@ -18,7 +18,7 @@
 ```sql
 id smallserial primary key
 ```
-***
+
 **serial** - имеет размер в 4 байта, диапазон 1 - 2.1 млрд
 ```sql
 id serial primary key
@@ -29,6 +29,7 @@ id serial primary key
 id bigserial primary key
 ```
 
+***
 ## Целые числа обычные
 **smallint (Int2)** - размер 2 байта, диапазон от -32 768 до 32 767
 ```sql
