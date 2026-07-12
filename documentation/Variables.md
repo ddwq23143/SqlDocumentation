@@ -12,12 +12,13 @@
 - [JSON](#json)
 - [Другие](#другие)
 
+***
 ## Целые числа авто
 **smallserial** - имеет размер в 2 байта, диапазон 1 - 32 767
 ```sql
 id smallserial primary key
 ```
-
+***
 **serial** - имеет размер в 4 байта, диапазон 1 - 2.1 млрд
 ```sql
 id serial primary key
