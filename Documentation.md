@@ -32,7 +32,7 @@ drop database userdb;
 - [JSON](#json)
 - [Другие](#другие)
 
-#### Целые числа авто
+### Целые числа авто
 **smallserial** имеет размер в 2 байта и может хранить до 32 767 чисел
 ```Sql
 id smallserial primary key
